@@ -1,51 +1,16 @@
-<HTML>
-	<HEAD>
-		<STYLE> 
-			img{
-				display: block;
-				margin-left: auto;
-				margin-right: auto;
-				height: 250px;
-				width: 250px;
-			}
-			h2{
-				text-align: center;
-			}
-		</STYLE>
-	</HEAD>
-	<BODY onload="listMap()">
+<!DOCTYPE html>
+	<html>
+	<head> 
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Class Scheduler</title>
+	<!--Boothstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">	
+	<link rel="SchedulingAlgorithm.css">
+	</head>
+	<body onload="listMap()">
 		<h2>Computer Science Departmental Requirements and Prerequisite Structure</h2>
-	</BODY>
+	</body>
 	
-	<SCRIPT>
-		//var classAry = ["CS111","Math120"];
-		var classMap = {1:"CS111",
-						2:"Math120",
-						3:"Math141",
-						4:"Math142",
-						5:"Math143",
-						6:"Math241",
-						7:"CS211",
-						8:"CS212",
-						9:"CS220",
-						10:"CS240",
-						11:"CS313",
-						12:"CS320",
-						13:"CS343",
-						14:"CS323",
-						15:"CS331",
-						16:"CS355",
-						17:"CS370",
-						18:"CS316",
-						19:"CS340"};
-		var adjacencyMatrix = [19][19];
-		function listMap(){
-			adjacencyMatrix[1][1] = 1;
-			alert(adjacencyMatrix[1][1]);
-		}
-		
-		function loadAdjacencyMatrix(){
-			
-		}
-	</SCRIPT>
-</HTML>
+	<script src ="SchedulingAlgorithm.js"></script>
+</html>
