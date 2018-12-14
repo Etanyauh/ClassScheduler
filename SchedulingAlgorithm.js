@@ -1,4 +1,5 @@
 //var classAry = ["CS111","Math120"];
+//Credit:Steven
 		var classMap = {1:"CS111",
 						2:"Math120",
 						3:"Math141",
@@ -24,7 +25,6 @@
 			adjacencyMatrix[i] = new Array(21);
 		}
 		function listMap(){
-			//alert(adjacencyMatrix[1][1]);
 			loadAdjacencyMatrix();
 		}
 		
@@ -60,4 +60,24 @@
 			adjacencyMatrix[13][19] = 1;
 		}
 
+//Created By: Brian
+		function checkMatrix(checkBoxArray, adjMatrix)
+		{
+			for(var i = 1; i <= 20; i++)
+			{
+				if(checkBoxArray[i] == 1){
+					for(var j = 1; j <= 20; i++)
+					{
+						if(adjMatrix[j][i] != 0){
+							alert("You do not have the correct prereq");
+							return;
+						}
+					}
+					for(var k = 1; k <= 20; k++)
+					{
+						adjMatrix[i][k] = 0;
+					}
+				}
+			}
+		}
 		console.log(adjacencyMatrix);
