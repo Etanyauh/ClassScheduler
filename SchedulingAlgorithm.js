@@ -80,4 +80,8 @@
 				}
 			}
 		}
-		console.log(adjacencyMatrix);
+
+/* Still needs work */
+var toggleArray= new Array(22);
+console.log(toggleArray);
+var status = document.getElementById('customCheck1').checked;
