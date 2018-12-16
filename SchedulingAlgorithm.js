@@ -4,24 +4,27 @@
 		
 			var classPerSemester = 5;
 			var maximulTotalSemester = 20;
-
-			var classesLeft = totalClasses;
 			
 			var scheduleTable = new Array(classPerSemester);
 			for(var i = 0; i < classPerSemester; i++){
 				scheduleTable[i] = new Array(maximulTotalSemester);
 			}
+			var classesMarked = [];
+			var classLeft;
+		function init(){	
+			classesLeft = totalClasses;
+
 			for(var i = 0; i < classPerSemester; i++){
 				for(var j = 0; j < maximulTotalSemester; j++){
 					scheduleTable[i][j] = 0;
 				}
 			}
 
-			var classesMarked = [];
-			for(var i = 1; i <= 21; i++){
-				classesMarked.push(false);
+			for(var i = 1; i <= 20; i++){
+				classesMarked[i] = false;
 			}
-			
+			loadAdjacencyMatrix();
+		}	
 		var classMap = {0:"Flexible",
 						1:"CS111",
 						2:"Math120",
@@ -46,9 +49,6 @@
 		var adjacencyMatrix = new Array(21);
 		for(var i = 0; i < adjacencyMatrix.length; i++){
 			adjacencyMatrix[i] = new Array(21);
-		}
-		function listMap(){
-			loadAdjacencyMatrix();
 		}
 		
 		function loadAdjacencyMatrix(){
@@ -81,6 +81,18 @@
 			adjacencyMatrix[12][19] = 1;
 			adjacencyMatrix[12][20] = 1;
 			adjacencyMatrix[13][19] = 1;
+		}
+		
+		var checkBoxArray = [];
+		function checkToggle(){
+			var toCheck = document.getElementsByTagName("input");
+			for(var i = 0; i < totalClasses; i++) {
+				if(toCheck[i].type == "checkbox" && toCheck[i].checked == true){
+					checkBoxArray[i+1] = 1;
+				}
+				else checkBoxArray[i+1] = 0;
+			}
+			checkMatrix(checkBoxArray, adjacencyMatrix);
 		}
 
 //Created By: Brian
@@ -116,14 +128,16 @@ var modal = document.getElementById('myModal');
 var resultSection = document.getElementById('resultSection');
 
 Submit.onclick = function(){
+	init();
+	//checkToggle();
+	//checkMatrix();
+	scheduling();
 	printScheduleTable();
 	modal.style.display = "block";
 }
 cancel.onclick = function() {
 	modal.style.display = "none";
 }		
-		
-		listMap();
 		
 		var currSem;
 		
@@ -280,9 +294,8 @@ cancel.onclick = function() {
 		
 		
 		function printScheduleTable(){
-			scheduling();
 
-			resultSection.innerHTML += "<br> <table id='myTable'> <tr> </tr> </table>"
+			resultSection.innerHTML = "<br> <table id='myTable'> <tr> </tr> </table>"
 			
 			var SchTable = document.getElementById('myTable');
 			
