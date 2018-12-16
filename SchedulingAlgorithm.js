@@ -1,7 +1,7 @@
 //var classAry = ["CS111","Math120"];
 //Credit:Steven
 		var totalClasses = 20;
-		
+		var semester = 0;
 			var classPerSemester = 5;
 			var maximulTotalSemester = 20;
 			
@@ -13,7 +13,7 @@
 			var classLeft;
 		function init(){	
 			classesLeft = totalClasses;
-
+			semeseter = 0;
 			for(var i = 0; i < classPerSemester; i++){
 				for(var j = 0; j < maximulTotalSemester; j++){
 					scheduleTable[i][j] = 0;
@@ -310,15 +310,17 @@ cancel.onclick = function() {
 		}
 		function makeTable(theIndex){
 			var SchTable = document.getElementById('myTable');
-			
+			semester++;
 			var row = SchTable.insertRow(-1);
 			
-			var cell1 = row.insertCell(0);
-			var cell2 = row.insertCell(1);
-			var cell3 = row.insertCell(2);
-			var cell4 = row.insertCell(3);
-			var cell5 = row.insertCell(4);
+			var cell0 = row.insertCell(0);
+			var cell1 = row.insertCell(1);
+			var cell2 = row.insertCell(2);
+			var cell3 = row.insertCell(3);
+			var cell4 = row.insertCell(4);
+			var cell5 = row.insertCell(5);
 			
+			cell0.innerHTML += "Semester " + semester;
 			cell1.innerHTML += classMap[scheduleTable[0][theIndex]];
 			cell2.innerHTML += classMap[scheduleTable[1][theIndex]];
 			cell3.innerHTML += classMap[scheduleTable[2][theIndex]];
