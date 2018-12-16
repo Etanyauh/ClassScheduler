@@ -92,35 +92,38 @@
 				}
 				else checkBoxArray[i+1] = 0;
 			}
-			checkMatrix(checkBoxArray, adjacencyMatrix);
+			return checkMatrix();
 		}
 
 //Created By: Brian
-		function checkMatrix(checkBoxArray, adjMatrix)
-			{
+		function checkMatrix()
+			{			
 				for(var i = 1; i <= totalClasses; i++)
 				{
 					if(checkBoxArray[i] == 1){
-						for(var j = 1; j <= totalClasses; i++)
+						for(var j = 1; j <= totalClasses; j++)
 						{
-							if(adjMatrix[j][i] != 0){
+							if(adjacencyMatrix[j][i] != 0){
+								//console.log(adjacencyMatrix);
+
 								alert("You do not have the correct prereq");
-								return;
+								return false;
 							}
 						}
 						for(var k = 1; k <= totalClasses; k++)
 						{
-							adjMatrix[i][k] = 0;
+							adjacencyMatrix[i][k] = 0;
 						}
 						classesLeft--;
 						classesMarked[i] = true;
 					}
 				}
+				return true;
 			}
 
 /* Still needs work */
 var toggleArray= new Array(22);
-console.log(toggleArray);
+//console.log(toggleArray);
 var status = document.getElementById('customCheck1').checked;
 var Submit = document.getElementById("Submit");
 var cancel = document.getElementById("cancel");
@@ -129,7 +132,8 @@ var resultSection = document.getElementById('resultSection');
 
 Submit.onclick = function(){
 	init();
-	//checkToggle();
+	var inputBool = checkToggle();
+	if(!inputBool) return;
 	//checkMatrix();
 	scheduling();
 	printScheduleTable();
@@ -150,12 +154,12 @@ cancel.onclick = function() {
 
 		
 		//console.log(openLinkedList);
-		console.log(classesMarked);
-		console.log(scheduleTable);
+		//console.log(classesMarked);
+		//console.log(scheduleTable);
 		//console.log(linkedList_getHead());
 				
 		function scheduling(){
-			console.log(adjacencyMatrix);
+			//console.log(adjacencyMatrix);
 			currSem = 1;
 			
 			var orphanId;
@@ -168,7 +172,7 @@ cancel.onclick = function() {
 				
 				//Find all orphan nodes and put them
 				//and put them in the linked list
-				console.log("iteration " + ++debugIteration);
+				//console.log("iteration " + ++debugIteration);
 				while(true){
 
 					orphanId = getOrphanClass();
@@ -217,9 +221,9 @@ cancel.onclick = function() {
 				//This is likely to happen if there is an infinite loop
 				debugCounter--;
 				if(debugCounter <= 0){
-					console.log(openLinkedList);
-					console.log(scheduleTable);
-					console.log(classesMarked);
+					//console.log(openLinkedList);
+					//console.log(scheduleTable);
+					//console.log(classesMarked);
 					printLinkedList();
 					return;
 				}
@@ -307,7 +311,7 @@ cancel.onclick = function() {
 		function makeTable(theIndex){
 			var SchTable = document.getElementById('myTable');
 			
-			var row = SchTable.insertRow(1);
+			var row = SchTable.insertRow(-1);
 			
 			var cell1 = row.insertCell(0);
 			var cell2 = row.insertCell(1);
@@ -327,7 +331,7 @@ cancel.onclick = function() {
 			var spot = openLinkedList.head.next;
 			
 			while(spot != null){
-				console.log(classMap[spot.data]);
+				//console.log(classMap[spot.data]);
 			
 				spot = spot.next;
 			}
