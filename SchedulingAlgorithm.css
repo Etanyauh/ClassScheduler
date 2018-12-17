@@ -7,12 +7,8 @@ div.holderBoxes {
 	border-style: solid;
 }
 
-div.row1{
-
-}
-
 div.row2 {
-	margin-top: : 200px;
+	margin-top: 200px;
 }
 
 .modal {
@@ -51,4 +47,14 @@ div.row2 {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+#resultSection {
+    height: 200px;
+    overflow: scroll;
+}
+
+.modal {
+    padding-top: 0px !important;
+    padding-bottom: 100px !important;
 }

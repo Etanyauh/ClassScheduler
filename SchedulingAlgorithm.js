@@ -2,7 +2,7 @@
 		var totalClasses = 22;
 			var classPerSemester = 5;
 			var maximulTotalSemester = 20;
-			
+			var countCheck = 0;
 			var scheduleTable = new Array(classPerSemester);
 			for(var i = 0; i < classPerSemester; i++){
 				scheduleTable[i] = new Array(maximulTotalSemester);
@@ -11,6 +11,7 @@
 			var classLeft;
 		function init(){	
 			classesLeft = totalClasses;
+			countCheck = 0;
 			for(var i = 0; i < classPerSemester; i++){
 				for(var j = 0; j < maximulTotalSemester; j++){
 					scheduleTable[i][j] = 0;
@@ -304,13 +305,26 @@ cancel.onclick = function() {
 			resultSection.innerHTML = "<br> <div class='table-responsive'> <table id='myTable' class='table table-striped'> <tr> </tr> </table> </div>"
 			
 			var SchTable = document.getElementById('myTable');
-			var row = SchTable.insertRow(1);
-			var cells;
-			for(var j = 0; j<= classPerSemester; j++){
-				cell = row.insertCell(j);
-				if(j!=0)cell.innerHTML = "Class " + j;
+			var needHeader = document.getElementsByTagName("input");
+			for(var i = 1; i<=totalClasses; i++){
+				if(needHeader[i].type == "checkbox" && needHeader[i].checked == true){
+					countCheck++;
+				}
 			}
 
+			if(countCheck == totalClasses){
+				SchTable.innerHTML = "Congratulations!";
+				return;
+			}
+				var row = SchTable.insertRow(1);
+				var cells;
+			
+				for(var j = 0; j<= classPerSemester; j++){
+					cell = row.insertCell(j);
+					if(j!=0)cell.innerHTML = "Class " + j;
+				}
+			
+			
 			for(var i = 1; i < currSem; i++){
 				makeTable(i);
 			}
