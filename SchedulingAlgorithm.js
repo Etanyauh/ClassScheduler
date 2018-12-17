@@ -1,6 +1,5 @@
 //Credit:Steven
 		var totalClasses = 22;
-		var semester = 0;
 			var classPerSemester = 5;
 			var maximulTotalSemester = 20;
 			
@@ -12,7 +11,6 @@
 			var classLeft;
 		function init(){	
 			classesLeft = totalClasses;
-			semester = 0;
 			for(var i = 0; i < classPerSemester; i++){
 				for(var j = 0; j < maximulTotalSemester; j++){
 					scheduleTable[i][j] = 0;
@@ -141,7 +139,6 @@
 						classesMarked[i] = true;
 					}
 				}
-				console.log(checkBoxArray);
 				return true;
 			}
 
@@ -155,7 +152,6 @@ Submit.onclick = function(){
 	init();
 	var inputBool = checkToggle();
 	if(!inputBool) return;
-	console.log(classesMarked);
 	scheduling();
 	printScheduleTable();
 	modal.style.display = "block";
@@ -305,7 +301,7 @@ cancel.onclick = function() {
 		
 		function printScheduleTable(){
 
-			resultSection.innerHTML = "<br> <table id='myTable' class='table table-striped'> <tr> </tr> </table>"
+			resultSection.innerHTML = "<br> <div class='table-responsive'> <table id='myTable' class='table table-striped'> <tr> </tr> </table> </div>"
 			
 			var SchTable = document.getElementById('myTable');
 			
@@ -316,7 +312,6 @@ cancel.onclick = function() {
 		}
 		function makeTable(theIndex){
 			var SchTable = document.getElementById('myTable');
-			semester++;
 			var row = SchTable.insertRow(-1);
 			
 			var cell0 = row.insertCell(0);
@@ -326,7 +321,7 @@ cancel.onclick = function() {
 			var cell4 = row.insertCell(4);
 			var cell5 = row.insertCell(5);
 			
-			cell0.innerHTML += "Semester " + semester;
+			cell0.innerHTML += "Semester " + theIndex;
 			cell1.innerHTML += classMap[scheduleTable[0][theIndex]];
 			cell2.innerHTML += classMap[scheduleTable[1][theIndex]];
 			cell3.innerHTML += classMap[scheduleTable[2][theIndex]];
