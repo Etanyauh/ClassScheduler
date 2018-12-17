@@ -1,6 +1,6 @@
 //var classAry = ["CS111","Math120"];
 //Credit:Steven
-		var totalClasses = 20;
+		var totalClasses = 22;
 		var semester = 0;
 			var classPerSemester = 5;
 			var maximulTotalSemester = 20;
@@ -13,14 +13,14 @@
 			var classLeft;
 		function init(){	
 			classesLeft = totalClasses;
-			semeseter = 0;
+			semester = 0;
 			for(var i = 0; i < classPerSemester; i++){
 				for(var j = 0; j < maximulTotalSemester; j++){
 					scheduleTable[i][j] = 0;
 				}
 			}
 
-			for(var i = 1; i <= 20; i++){
+			for(var i = 1; i <= totalClasses; i++){
 				classesMarked[i] = false;
 			}
 			loadAdjacencyMatrix();
@@ -45,10 +45,12 @@
 						17:"CS355",
 						18:"CS370",
 						19:"CS316",
-						20:"CS340"};
-		var adjacencyMatrix = new Array(21);
+						20:"CS340",
+						21:"Elective1",
+						22:"Elective2"};
+		var adjacencyMatrix = new Array(totalClasses+1);
 		for(var i = 0; i < adjacencyMatrix.length; i++){
-			adjacencyMatrix[i] = new Array(21);
+			adjacencyMatrix[i] = new Array(totalClasses+1);
 		}
 		
 		function loadAdjacencyMatrix(){
@@ -81,18 +83,41 @@
 			adjacencyMatrix[12][19] = 1;
 			adjacencyMatrix[12][20] = 1;
 			adjacencyMatrix[13][19] = 1;
+			adjacencyMatrix[12][21] = 1;
+			adjacencyMatrix[12][22] = 1;
 		}
 		
 		var checkBoxArray = [];
 		function checkToggle(){
 			var toCheck = document.getElementsByTagName("input");
-			for(var i = 0; i < totalClasses; i++) {
+			for(var i = 1; i <= totalClasses; i++) {
 				if(toCheck[i].type == "checkbox" && toCheck[i].checked == true){
-					checkBoxArray[i+1] = 1;
+					checkBoxArray[i] = 1;
 				}
-				else checkBoxArray[i+1] = 0;
+				else checkBoxArray[i] = 0;
 			}
 			return checkMatrix();
+		}
+		
+		var selectedAll = document.getElementById("selectAll");
+			
+		//Check or uncheck all rows
+		selectedAll.onclick = function() {
+			var inputs = document.getElementsByTagName("input");
+			if(inputs[0].checked == true){
+				for(var i = 1; i < inputs.length; i++) {
+					if(inputs[i].type == "checkbox") { 
+						inputs[i].checked = true; 
+					}  
+				} 
+			}
+			else if(inputs[0].checked == false){
+				for(var i = 1; i < inputs.length; i++) {
+					if(inputs[i].type == "checkbox") {			
+						inputs[i].checked = false;
+					}
+				}
+			}
 		}
 
 //Created By: Brian
@@ -118,13 +143,14 @@
 						classesMarked[i] = true;
 					}
 				}
+				console.log(checkBoxArray);
 				return true;
 			}
 
 /* Still needs work */
-var toggleArray= new Array(22);
+var toggleArray= new Array(totalClasses);
 //console.log(toggleArray);
-var status = document.getElementById('customCheck1').checked;
+//var status = document.getElementById('customCheck1').checked;
 var Submit = document.getElementById("Submit");
 var cancel = document.getElementById("cancel");
 var modal = document.getElementById('myModal');
@@ -135,6 +161,7 @@ Submit.onclick = function(){
 	var inputBool = checkToggle();
 	if(!inputBool) return;
 	//checkMatrix();
+	console.log(classesMarked);
 	scheduling();
 	printScheduleTable();
 	modal.style.display = "block";
@@ -299,7 +326,7 @@ cancel.onclick = function() {
 		
 		function printScheduleTable(){
 
-			resultSection.innerHTML = "<br> <table id='myTable'> <tr> </tr> </table>"
+			resultSection.innerHTML = "<br> <table id='myTable' class='table table-striped'> <tr> </tr> </table>"
 			
 			var SchTable = document.getElementById('myTable');
 			
