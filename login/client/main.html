@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+	<html>
+	<head> 
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Class Scheduler</title>
+	<!--Boothstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">	
+	<link rel="stylesheet" href="SchedulingAlgorithm.css">
+	
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Class Scheduler</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+		<h2 style="text-align: center">Computer Science Departmental Requirements and Prerequisite Structure</h2>
+		<h2 style="text-align: right, padding-left=30px">CSCI-BA</h2> 
+		<h5 style="text-align: right, padding-left=30px"><i>Hint: Check the classes you have taken.</i></h5>
+	
+  		<table class="table  table-sm">
+            <thead class="table-info">
+                <tr>
+                    <th>
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="selectAll">
+							<label class="custom-control-label" for="selectAll">Check All</label>
+						</div>
+					</th>
+                    <th>Class Name</th>
+                    <th>Class Number</th>
+                    <th>PreReqs</th>
+                    <th>Credits</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="1">
+  							<label class="custom-control-label" for="1">Check</label>
+						</div>
+                    </td>
+                    <td>Intro to Algorithmic Problem Solving</td>
+                    <td>CS 111</td>
+                    <td></td>
+                    <td>3 cr</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="2">
+  							<label class="custom-control-label" for="2">Check</label>
+						</div>
+                    </td>
+                   <td>Discrete Math</td>
+                    <td>Math 120</td>
+                    <td></td>
+                    <td>3 cr</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="3">
+  							<label class="custom-control-label" for="3">Check</label>
+						</div>
+                    </td>
+                    <td>Calculus 1</td>
+                    <td>Math 141</td>
+                    <td></td>
+                    <td>3 cr</td>
+                </tr>
+				 <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="4">
+  							<label class="custom-control-label" for="4">Check</label>
+						</div>
+                    </td>
+                    <td>Calculus/Integration</td>
+                    <td>Math 142</td>
+                    <td>Math 141</td>
+                    <td>3 cr</td>
+                </tr>
+				 <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="5">
+  							<label class="custom-control-label" for="5">Check</label>
+						</div>
+                    </td>
+                    <td>Calculus/Infinite Series</td>
+                    <td>Math 143</td>
+                    <td>Math 142</td>
+                    <td>3 cr</td>
+                </tr>
+                 <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="6">
+  							<label class="custom-control-label" for="6">Check</label>
+						</div>
+                    </td>
+                    <td>Linear Algebra</td>
+                    <td>Math 231</td>
+                    <td>Math 141</td>
+                    <td>4 cr</td>
+                </tr> 
+				<tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="7">
+  							<label class="custom-control-label" for="7">Check</label>
+						</div>
+                    </td>
+                    <td>Prob. & Stat.</td>
+                    <td>Math 241</td>
+                    <td>Math 143</td>
+                    <td>3 cr</td>
+                </tr>
+                 <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="8">
+  							<label class="custom-control-label" for="8">Check</label>
+						</div>
+                    </td>
+                    <td>OOP in C++</td>
+                    <td>CS 211</td>
+                    <td>CS 111</td>
+                    <td>3 cr</td>
+                </tr>
+                 <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="9">
+  							<label class="custom-control-label" for="9">Check</label>
+						</div>
+                    </td>
+                    <td>OOP in Java</td>
+                    <td>CS 212</td>
+                    <td>CS 111</td>
+                    <td>3 cr</td>
+                </tr>
+                 <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="10">
+  							<label class="custom-control-label" for="10">Check</label>
+						</div>
+                    </td>
+                    <td>Discrete Structures</td>
+                    <td>CS 220</td>
+                    <td>CS 211</td>
+                    <td>3 cr</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="11">
+  							<label class="custom-control-label" for="11">Check</label>
+						</div>
+                    </td>
+                    <td>Comp Org & Assemb.</td>
+                    <td>CS 240</td>
+                    <td>CS 111</td>
+                    <td>3 cr</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="12">
+  							<label class="custom-control-label" for="12">Check</label>
+						</div>
+                    </td>
+                    <td>Data Structures</td>
+                    <td>CS 313</td>
+                    <td>CS 211, CS 212, CS 220</td>
+                    <td>3 cr</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="13">
+  							<label class="custom-control-label" for="13">Check</label>
+						</div>
+                    </td>
+                    <td>Theory of Comp.</td>
+                    <td>CS 320</td>
+                    <td>CS 220</td>
+                    <td>3 cr</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="14">
+  							<label class="custom-control-label" for="14">Check</label>
+						</div>
+                    </td>
+                    <td>Comp. Arch.</td>
+                    <td>CS 343</td>
+                    <td>CS 240</td>
+                    <td>3 cr</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="15">
+  							<label class="custom-control-label" for="15">Check</label>
+						</div>
+                    </td>
+                    <td>D&A of Algorithms</td>
+                    <td>CS 323</td>
+                    <td>CS 313</td>
+                    <td>3 cr</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="16">
+  							<label class="custom-control-label" for="16">Check</label>
+						</div>
+                    </td>
+                    <td>Database</td>
+                    <td>CS 331</td>
+                    <td>CS 313</td>
+                    <td>3 cr</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="17">
+  							<label class="custom-control-label" for="17">Check</label>
+						</div>
+                    </td>
+                    <td>Internet Tech</td>
+                    <td>CS 355</td>
+                    <td>CS 313</td>
+                    <td>3 cr</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="18">
+  							<label class="custom-control-label" for="18">Check</label>
+						</div>
+                    </td>
+                    <td>Software Engineering</td>
+                    <td>CS 370</td>
+                    <td>CS 313</td>
+                    <td>3 cr</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="19">
+  							<label class="custom-control-label" for="19">Check</label>
+						</div>
+                    </td>
+                    <td>Principles of Programming Languages</td>
+                    <td>CS 316</td>
+                    <td>CS 313</td>
+                    <td>3 cr</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="20">
+  							<label class="custom-control-label" for="20">Check</label>
+						</div>
+                    </td>
+                    <td>Operating Systems</td>
+                    <td>CS 340</td>
+                    <td>CS 313</td>
+                    <td>3 cr</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="21">
+  							<label class="custom-control-label" for="21">Check</label>
+						</div>
+                    </td>
+                    <td>Elective 1</td>
+                    <td>CS 300+</td>
+                    <td>CS 313</td>
+                    <td>3 cr</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+  							<input type="checkbox" class="custom-control-input" id="22">
+  							<label class="custom-control-label" for="22">Check</label>
+						</div>
+                    </td>
+                    <td>Elective 2</td>
+                    <td>CS 300+</td>
+                    <td>CS 313</td>
+                    <td>3 cr</td>
+                </tr>
+            </tbody>
+        </table>
+			<div class="row justify-content-center">
+				<button onclick="printScheduleTable()" type="button" class="btn btn-dark" id="Submit">Submit</button>
+			</div>
+		<div class="modal" id="myModal">
+			<div style='max-width: 800px;' class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+					</div>
+					<div class="modal-body">
+						<h4 style="text-align: center">Result of Scheduling Algorithm</h4>
+						<div id="resultSection">
+
+						</div>	
+					</div>
+					<div class="modal-footer">
+						<button id="cancel" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+    <script src ="/mainjs"></script>
+    <script type="text/javascript">
+    $('.modal-content').resizable({
+      //alsoResize: ".modal-dialog",
+      minHeight: 300,
+      minWidth: 300
+    });
+    $('.modal-dialog').draggable();
+
+    $('#myModal').on('show.bs.modal', function() {
+      $(this).find('.modal-body').css({
+        'max-height': '100%'
+      });
+    });
+    </script>
+</html>
