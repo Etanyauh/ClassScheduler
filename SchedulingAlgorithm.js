@@ -304,7 +304,13 @@ cancel.onclick = function() {
 			resultSection.innerHTML = "<br> <div class='table-responsive'> <table id='myTable' class='table table-striped'> <tr> </tr> </table> </div>"
 			
 			var SchTable = document.getElementById('myTable');
-			
+			var row = SchTable.insertRow(1);
+			var cells;
+			for(var j = 0; j<= classPerSemester; j++){
+				cell = row.insertCell(j);
+				if(j!=0)cell.innerHTML = "Class " + j;
+			}
+
 			for(var i = 1; i < currSem; i++){
 				makeTable(i);
 			}
@@ -312,6 +318,7 @@ cancel.onclick = function() {
 		}
 		function makeTable(theIndex){
 			var SchTable = document.getElementById('myTable');
+			
 			var row = SchTable.insertRow(-1);
 			
 			var cell0 = row.insertCell(0);
