@@ -1,4 +1,3 @@
-//var classAry = ["CS111","Math120"];
 //Credit:Steven
 		var totalClasses = 22;
 		var semester = 0;
@@ -129,7 +128,6 @@
 						for(var j = 1; j <= totalClasses; j++)
 						{
 							if(adjacencyMatrix[j][i] != 0){
-								//console.log(adjacencyMatrix);
 
 								alert("You do not have the correct prereq");
 								return false;
@@ -147,10 +145,7 @@
 				return true;
 			}
 
-/* Still needs work */
 var toggleArray= new Array(totalClasses);
-//console.log(toggleArray);
-//var status = document.getElementById('customCheck1').checked;
 var Submit = document.getElementById("Submit");
 var cancel = document.getElementById("cancel");
 var modal = document.getElementById('myModal');
@@ -160,7 +155,6 @@ Submit.onclick = function(){
 	init();
 	var inputBool = checkToggle();
 	if(!inputBool) return;
-	//checkMatrix();
 	console.log(classesMarked);
 	scheduling();
 	printScheduleTable();
@@ -176,17 +170,8 @@ cancel.onclick = function() {
 						   next : null};
 		
 		var openLinkedList = { head : dummyNode }
-		
-		//console.log(openLinkedList);
-
-		
-		//console.log(openLinkedList);
-		//console.log(classesMarked);
-		//console.log(scheduleTable);
-		//console.log(linkedList_getHead());
 				
 		function scheduling(){
-			//console.log(adjacencyMatrix);
 			currSem = 1;
 			
 			var orphanId;
@@ -199,7 +184,6 @@ cancel.onclick = function() {
 				
 				//Find all orphan nodes and put them
 				//and put them in the linked list
-				//console.log("iteration " + ++debugIteration);
 				while(true){
 
 					orphanId = getOrphanClass();
@@ -248,9 +232,6 @@ cancel.onclick = function() {
 				//This is likely to happen if there is an infinite loop
 				debugCounter--;
 				if(debugCounter <= 0){
-					//console.log(openLinkedList);
-					//console.log(scheduleTable);
-					//console.log(classesMarked);
 					printLinkedList();
 					return;
 				}
@@ -306,9 +287,7 @@ cancel.onclick = function() {
 			var temp = openLinkedList.head.next.data;
 			
 			openLinkedList.head.next = openLinkedList.head.next.next;
-			
-			//linkedList_isEmpty();
-			
+						
 			return temp;
 			
 		}
@@ -360,7 +339,6 @@ cancel.onclick = function() {
 			var spot = openLinkedList.head.next;
 			
 			while(spot != null){
-				//console.log(classMap[spot.data]);
 			
 				spot = spot.next;
 			}
